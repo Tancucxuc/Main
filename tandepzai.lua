@@ -20,10 +20,10 @@ local fask = task
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "Nameeless Hub | Premium ",
+    Title = "tandepzai Hub | Free Scripts",
     SubTitle = "",
     TabWidth = 160,
-    Size = UDim2.fromOffset(500, 325),
+    Size = UDim2.fromOffset(600, 325),
     Acrylic = false,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
