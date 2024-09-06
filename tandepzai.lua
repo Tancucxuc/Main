@@ -1,27 +1,45 @@
+require(game.ReplicatedStorage.Util.CameraShaker):Stop()
+
+local bannedHWID = "7eda73f7-9bc5-4ab2-b7ca-884c80665df0"
+
+-- Hàm kiểm tra HWID và kick nếu bị cấm
+local function checkAndKickPlayer()
+    local player = game:GetService("Players").LocalPlayer
+    local playerHWID = player.UserId
+
+    if playerHWID == bannedHWID then
+        player:Kick("Buổi Tối Vui Vẻ Nhé 🤑")
+    end
+end
+
+checkAndKickPlayer()
+
+if not game:IsLoaded() then game.Loaded:Wait() end
+local fask = task 
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "Nameless Hub | Premium ",
+    Title = "Nameeless Hub | Premium ",
     SubTitle = "",
     TabWidth = 160,
     Size = UDim2.fromOffset(500, 325),
     Acrylic = false,
-    Theme = "light",
+    Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
 })
 
 local Tabs = {
     infor = Window:AddTab({ Title = "Infor Hub", Icon = "" }),
+    Home = Window:AddTab({ Title = "Status", Icon = "" }),
     Main = Window:AddTab({ Title = "Gerenal", Icon = "" }),
     item = Window:AddTab({ Title = "Item Farm", Icon = "" }),
     C = Window:AddTab({ Title = "Combat", Icon = "" }),
     tele = Window:AddTab({ Title = "Tween Island", Icon = "" }),
+    an = Window:AddTab({ Title = "Misc Sever", Icon = "" }),
     Race = Window:AddTab({ Title = "Mirage + Race V4", Icon = "" }),
     Raid = Window:AddTab({ Title = "Raid-Fruit", Icon = "" }),
     Melee = Window:AddTab({ Title = "Shop", Icon = "" })
-    Home = Window:AddTab({ Title = "Status", Icon = "" }),
-    an = Window:AddTab({ Title = "Misc Sever", Icon = "" }),
 }
 
 local Options = Fluent.Options
@@ -40,7 +58,7 @@ ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton.Size = UDim2.new(0, 50, 0, 55)
 ImageButton.Draggable = true
-ImageButton.Image = "https://create.roblox.com/store/asset/135727904969396 "
+ImageButton.Image = "http://www.roblox.com/asset/?id=18285114199"
 
 UICorner.CornerRadius = UDim.new(0, 10) 
 UICorner.Parent = ImageButton
