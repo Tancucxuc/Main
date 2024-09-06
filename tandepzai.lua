@@ -1592,17 +1592,17 @@ LPH_JIT_MAX(function()
 	end)
 end)()
 
-local SelectFastAttackMode = (SelectFastAttackMode or "AnDepZai Fast")
+local SelectFastAttackMode = (SelectFastAttackMode or "Super Fast Attack")
 
-SelectedFastAttackMode = {"Normal Attack","Fast Attack","AnDepZai Fast"}
+SelectedFastAttackMode = {"Normal Attack","Fast Attack","Super Fast Attack"}
 
 local function ChangeModeFastAttack(SelectFastAttackMode)
 	if SelectFastAttackMode == "Normal Attack" then
-		FireCooldown = 0.1
+		FireCooldown = 0.5
 	elseif SelectFastAttackMode == "Fast Attack" then
-		FireCooldown = 0.07
-	elseif SelectFastAttackMode == "AnDepZai Fast" then
-		FireCooldown = 0.02
+		FireCooldown = 0.2
+	elseif SelectFastAttackMode == "Super Fast Attack" then
+		FireCooldown = 0.04
 	end
 end
 
