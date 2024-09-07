@@ -1,21 +1,4 @@
-require(game.ReplicatedStorage.Util.CameraShaker):Stop()
-
-local bannedHWID = "7eda73f7-9bc5-4ab2-b7ca-884c80665df0"
-
--- Hàm kiểm tra HWID và kick nếu bị cấm
-local function checkAndKickPlayer()
-    local player = game:GetService("Players").LocalPlayer
-    local playerHWID = player.UserId
-
-    if playerHWID == bannedHWID then
-        player:Kick("Buổi Tối Vui Vẻ Nhé 🤑")
-    end
-end
-
-checkAndKickPlayer()
-
-if not game:IsLoaded() then game.Loaded:Wait() end
-local fask = task 
+ 
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
@@ -1309,10 +1292,10 @@ end
 
 ---------------SettingTab
 Tabs.infor:AddButton({
-        Title = "Discord | AnDepZai Hub",
+        Title = "Discord | Nameless Hub",
         Description = "Copy Link Discord",
         Callback = function()
-        setclipboard("https://discord.com/invite/EV7vagx6CT")
+        setclipboard("https://discord.com/invite/pWf6UqVNtA")
         end
     })
 ---------------TabStatus
@@ -4794,7 +4777,7 @@ end)
 
 game.StarterGui:SetCore("SendNotification", {
       Icon = "";
-      Title = "AnDepZai Hub", 
+      Title = "Nameless Hub", 
       Text = "Complete !";
 })                                                                                              
 wait(.3)
