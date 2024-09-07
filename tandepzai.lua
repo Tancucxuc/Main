@@ -20,7 +20,7 @@ local fask = task
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "tandepzai Hub | Free Scripts",
+    Title = "Nameless Hub | Premium",
     SubTitle = "",
     TabWidth = 160,
     Size = UDim2.fromOffset(600, 325),
@@ -31,7 +31,6 @@ local Window = Fluent:CreateWindow({
 
 local Tabs = {
     infor = Window:AddTab({ Title = "Infor Hub", Icon = "" }),
-    Home = Window:AddTab({ Title = "Status", Icon = "" }),
     Main = Window:AddTab({ Title = "Gerenal", Icon = "" }),
     item = Window:AddTab({ Title = "Item Farm", Icon = "" }),
     C = Window:AddTab({ Title = "Combat", Icon = "" }),
@@ -40,6 +39,7 @@ local Tabs = {
     Race = Window:AddTab({ Title = "Mirage + Race V4", Icon = "" }),
     Raid = Window:AddTab({ Title = "Raid-Fruit", Icon = "" }),
     Melee = Window:AddTab({ Title = "Shop", Icon = "" })
+    Home = Window:AddTab({ Title = "Status", Icon = "" }),
 }
 
 local Options = Fluent.Options
