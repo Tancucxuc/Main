@@ -1,4 +1,21 @@
- 
+ require(game.ReplicatedStorage.Util.CameraShaker):Stop()
+
+local bannedHWID = "7eda73f7-9bc5-4ab2-b7ca-884c80665df0"
+
+-- Hàm kiểm tra HWID và kick nếu bị cấm
+local function checkAndKickPlayer()
+    local player = game:GetService("Players").LocalPlayer
+    local playerHWID = player.UserId
+
+    if playerHWID == bannedHWID then
+        player:Kick("Buổi Tối Vui Vẻ Nhé 🤑")
+    end
+end
+
+checkAndKickPlayer()
+
+if not game:IsLoaded() then game.Loaded:Wait() end
+local fask = task 
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
