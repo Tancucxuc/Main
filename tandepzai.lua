@@ -49,7 +49,7 @@ J.Name = "J"
 J.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
 J.Parent = S
 
--- Thêm nhãn chữ "Loading..." với màu xanh
+-- Thêm nhãn phần trăm với màu xanh
 local labelLoading = Instance.new("TextLabel")
 labelLoading.Name = "LabelLoading"
 labelLoading.Size = UDim2.new(0, 100, 0, 24)
@@ -58,7 +58,7 @@ labelLoading.BackgroundTransparency = 1
 labelLoading.TextColor3 = Color3.fromRGB(0, 255, 0) -- Chữ màu xanh
 labelLoading.Font = Enum.Font.SourceSansBold
 labelLoading.TextSize = 24
-labelLoading.Text = "Loading..." -- Chữ "loading"
+labelLoading.Text = "1%" -- Ban đầu là 1%
 labelLoading.Parent = X
 
 local B = Instance.new("Frame")
@@ -115,11 +115,25 @@ UK.Parent = KL
 local TweenService = game:GetService("TweenService")
 TweenService:Create(B,TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 325, 0, 45)}):Play()
 TweenService:Create(KL,TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 324, 0, 66)}):Play()
-TweenService:Create(S,TweenInfo.new(5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 325, 0, 24)}):Play()
-wait(5)
-if S.Size == UDim2.new(0, 325, 0, 24) then
-	Z:Destroy()
+
+-- Cập nhật tiến trình từ 1% đến 100%
+for i = 1, 100 do
+    -- Cập nhật thanh trượt
+    S.Size = UDim2.new(i / 100, 0, 0, 24)
+    
+    -- Cập nhật phần trăm hiển thị
+    labelLoading.Text = tostring(i) .. "%"
+    
+    -- Chờ 0.05 giây mỗi lần lặp (tổng cộng khoảng 5 giây cho 100%)
+    wait(0.05)
 end
+
+wait(1) -- Đợi 1 giây trước khi hủy GUI
+
+if S.Size == UDim2.new(1, 0, 0, 24) then
+    Z:Destroy()
+end
+
 
 -------------------// I Write... \\----------------------------------------
  
