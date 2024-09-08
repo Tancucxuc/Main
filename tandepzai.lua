@@ -49,6 +49,18 @@ J.Name = "J"
 J.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
 J.Parent = S
 
+-- Thêm nhãn chữ "Loading..." với màu xanh
+local labelLoading = Instance.new("TextLabel")
+labelLoading.Name = "LabelLoading"
+labelLoading.Size = UDim2.new(0, 100, 0, 24)
+labelLoading.Position = UDim2.new(0.5, -50, 0.8, 0) -- Căn giữa vào thanh đang chạy
+labelLoading.BackgroundTransparency = 1
+labelLoading.TextColor3 = Color3.fromRGB(0, 255, 0) -- Chữ màu xanh
+labelLoading.Font = Enum.Font.SourceSansBold
+labelLoading.TextSize = 24
+labelLoading.Text = "Loading..." -- Chữ "loading"
+labelLoading.Parent = X
+
 local B = Instance.new("Frame")
 local A = Instance.new("UICorner")
 local N = Instance.new("UIGradient")
@@ -108,7 +120,6 @@ wait(5)
 if S.Size == UDim2.new(0, 325, 0, 24) then
 	Z:Destroy()
 end
-
 
 -------------------// I Write... \\----------------------------------------
  
