@@ -52,16 +52,14 @@ J.Parent = S
 -- Thêm nhãn phần trăm với màu đen và căn giữa thanh trượt
 local labelLoading = Instance.new("TextLabel")
 labelLoading.Name = "LabelLoading"
-labelLoading.Size = UDim2.new(1, 0, 1, 0) -- Căn giữa toàn bộ thanh trượt
-labelLoading.Position = UDim2.new(0, 0, 0, 0) -- Đặt vị trí chính giữa thanh trượt
+labelLoading.Size = UDim2.new(0, 100, 0, 24)
+labelLoading.Position = UDim2.new(0.5, -50, 0.8, 0) -- Căn giữa vào thanh đang chạy
 labelLoading.BackgroundTransparency = 1
 labelLoading.TextColor3 = Color3.fromRGB(0, 0, 0) -- Chữ màu đen
 labelLoading.Font = Enum.Font.SourceSansBold
-labelLoading.TextSize = 18
+labelLoading.TextSize = 24
 labelLoading.Text = "1%" -- Ban đầu là 1%
-labelLoading.TextStrokeTransparency = 0.8 -- Để chữ nổi bật hơn
-labelLoading.TextStrokeColor3 = Color3.fromRGB(255, 255, 255) -- Màu viền trắng cho chữ
-labelLoading.Parent = S
+labelLoading.Parent = X
 
 local B = Instance.new("Frame")
 local A = Instance.new("UICorner")
@@ -120,8 +118,16 @@ TweenService:Create(KL, TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirec
 
 -- Cập nhật tiến trình từ 1% đến 100%
 local delayAt40 = 0.4
-local delayAt80 =
-
+local delayAt80 = 1
+for i = 1, 100 do
+    -- Cập nhật thanh trượt
+    S.Size = UDim2.new(i / 100, 0, 0, 24)
+    
+    -- Cập nhật phần trăm hiển thị
+    labelLoading.Text = tostring(i) .. "%"
+    
+    -- Cập nhật vị trí của phần trăm để căn giữa thanh trượt
+    labelLoading.Position = UDim2.new(i / 100 - 0.05
 
 -------------------// I Write... \\----------------------------------------
  
