@@ -113,10 +113,12 @@ UK.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255
 UK.Parent = KL
 
 local TweenService = game:GetService("TweenService")
-TweenService:Create(B,TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 325, 0, 45)}):Play()
-TweenService:Create(KL,TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 324, 0, 66)}):Play()
+TweenService:Create(B, TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 325, 0, 45)}):Play()
+TweenService:Create(KL, TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 324, 0, 66)}):Play()
 
 -- Cập nhật tiến trình từ 1% đến 100%
+local delayAt40 = 0.4
+local delayAt80 = 1
 for i = 1, 100 do
     -- Cập nhật thanh trượt
     S.Size = UDim2.new(i / 100, 0, 0, 24)
@@ -124,15 +126,21 @@ for i = 1, 100 do
     -- Cập nhật phần trăm hiển thị
     labelLoading.Text = tostring(i) .. "%"
     
-    -- Chờ 0.05 giây mỗi lần lặp (tổng cộng khoảng 5 giây cho 100%)
-    wait(0.05)
+    -- Cập nhật vị trí của phần trăm để căn giữa thanh trượt
+    labelLoading.Position = UDim2.new(i / 100 - 0.05, 0, 0.8, 0) -- Căn giữa phần trăm
+    
+    -- Đợi trước khi tiếp tục, thêm điều kiện dừng
+    if i == 40 then
+        wait(delayAt40)
+    elseif i == 80 then
+        wait(delayAt80)
+    else
+        wait(0.05) -- Thay đổi tốc độ cập nhật nếu cần
+    end
 end
 
-wait(1) -- Đợi 1 giây trước khi hủy GUI
-
-if S.Size == UDim2.new(1, 0, 0, 24) then
-    Z:Destroy()
-end
+-- Xóa UI sau khi hoàn thành
+Z:Destroy()
 
 
 -------------------// I Write... \\----------------------------------------
