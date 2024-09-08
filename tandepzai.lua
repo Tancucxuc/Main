@@ -13,7 +13,8 @@ X.BorderSizePixel = 0
 X.Size = UDim2.new(0, 350, 0, 170)
 X.BorderColor3 = Color3.fromRGB(255, 255, 255)
 X.Name = "X"
-X.Position = UDim2.new(0.33669, 0, 0.311639, 0)
+-- Căn giữa bảng trên màn hình
+X.Position = UDim2.new(0.5, -X.Size.X.Offset/2, 0.5, -X.Size.Y.Offset/2)
 X.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 X.Parent = Z
 local UICorner = Instance.new("UICorner")
