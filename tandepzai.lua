@@ -7,33 +7,24 @@ local U = Instance.new("UICorner")
 local S = Instance.new("Frame")
 local M = Instance.new("UICorner")
 local J = Instance.new("UIGradient")
-local PercentLabel = Instance.new("TextLabel") -- Thêm TextLabel cho phần trăm
-
 Z.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Z.Name = "Z"
 Z.Parent = game:GetService("CoreGui")
-
 X.BorderSizePixel = 0
 X.Size = UDim2.new(0, 350, 0, 170)
 X.BorderColor3 = Color3.fromRGB(255, 255, 255)
 X.Name = "X"
-X.Position = UDim2.new(0.5, -X.Size.X.Offset/2, 0.5, -X.Size.Y.Offset/2) -- Căn giữa
+-- Căn giữa bảng trên màn hình
+X.Position = UDim2.new(0.5, -X.Size.X.Offset/2, 0.5, -X.Size.Y.Offset/2)
 X.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 X.Parent = Z
-
 local UICorner = Instance.new("UICorner")
 UICorner.Name = "UICorner"
 UICorner.CornerRadius = UDim.new(0, 3)
 UICorner.Parent = X
-
 F.Name = "F"
-F.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), 
-    ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), 
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
-}
+F.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
 F.Parent = X
-
 H.BorderSizePixel = 0
 H.Size = UDim2.new(0, 325, 0, 24)
 H.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -41,11 +32,9 @@ H.Name = "H"
 H.Position = UDim2.new(0.0314286, 0, 0.805882, 0)
 H.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 H.Parent = X
-
 U.Name = "U"
 U.CornerRadius = UDim.new(0, 5)
 U.Parent = H
-
 S.BorderSizePixel = 0
 S.Size = UDim2.new(0, 0, 0, 24)
 S.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -53,50 +42,73 @@ S.Name = "S"
 S.Position = UDim2.new(0.0314286, 0, 0.805882, 0)
 S.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 S.Parent = X
-
 M.Name = "M"
 M.CornerRadius = UDim.new(0, 5)
 M.Parent = S
-
 J.Name = "J"
-J.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), 
-    ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), 
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
-}
+J.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
 J.Parent = S
 
--- Thiết lập PercentLabel để hiển thị phần trăm
-PercentLabel.Name = "PercentLabel"
-PercentLabel.Parent = X
-PercentLabel.Size = UDim2.new(0, 325, 0, 24)
-PercentLabel.Position = UDim2.new(0.0314286, 0, 0.705882, 0)
-PercentLabel.BackgroundTransparency = 1
-PercentLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-PercentLabel.TextSize = 18
-PercentLabel.Font = Enum.Font.SourceSansBold
-PercentLabel.Text = "Loading... 0%" -- Text mặc định ban đầu
+local B = Instance.new("Frame")
+local A = Instance.new("UICorner")
+local N = Instance.new("UIGradient")
+local NM = Instance.new("TextLabel")
+B.BorderSizePixel = 0
+B.Size = UDim2.new(0, 0, 0, 45)
+B.BorderColor3 = Color3.fromRGB(0, 0, 0)
+B.Name = "B"
+B.Position = UDim2.new(0.0298409, 0, 0.0379087, 0)
+B.ClipsDescendants = true
+B.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+B.Parent = X
+A.Name = "A"
+A.CornerRadius = UDim.new(1, 0)
+A.Parent = B
+N.Name = "N"
+N.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
+N.Parent = B
+NM.BorderSizePixel = 0
+NM.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NM.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+NM.TextSize = 14
+NM.Position = UDim2.new(0.0830769, 0, 0.0888889, 0)
+NM.Size = UDim2.new(0, 273, 0, 36)
+NM.Name = "NM"
+NM.TextColor3 = Color3.fromRGB(255, 255, 255)
+NM.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NM.Text = "CHÀO MỪNG EM ĐẾN VỚI SCRIPT CỦA BỌN ANH  "
+NM.BackgroundTransparency = 1
+NM.Parent = B
+local KL = Instance.new("TextLabel")
+local UK = Instance.new("UIGradient")
+KL.BorderSizePixel = 0
+KL.TextYAlignment = Enum.TextYAlignment.Top
+KL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KL.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+KL.TextSize = 14
+KL.ClipsDescendants = true
+KL.Position = UDim2.new(0.0314286, 0, 0.352941, 0)
+KL.Size = UDim2.new(0, 0, 0, 66)
+KL.Name = "KL"
+KL.TextColor3 = Color3.fromRGB(255, 255, 255)
+KL.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KL.Text = "SCRIPT DC TẠO BỞI TANCUCXUC ÔNG HOÀNG ĐƯỢC
+KL.Text = " MỆNH DANH LÀ VUA ĂN TRỘM"
+KL.BackgroundTransparency = 1
+KL.TextXAlignment = Enum.TextXAlignment.Left
+KL.Parent = X
+UK.Name = "UK"
+UK.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.0345423, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(0.331606, Color3.fromRGB(116.519, 143.613, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
+UK.Parent = KL
 
 local TweenService = game:GetService("TweenService")
-
--- Hàm cập nhật phần trăm
-local function updatePercent(percent)
-    PercentLabel.Text = "Loading... " .. tostring(percent) .. "%"
+TweenService:Create(B,TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 325, 0, 45)}):Play()
+TweenService:Create(KL,TweenInfo.new(3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 324, 0, 66)}):Play()
+TweenService:Create(S,TweenInfo.new(5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Size = UDim2.new(0, 325, 0, 24)}):Play()
+wait(5)
+if S.Size == UDim2.new(0, 325, 0, 24) then
+	Z:Destroy()
 end
-
--- Tạo tween cho khung tải và phần trăm
-for i = 1, 100 do
-    TweenService:Create(S, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-        Size = UDim2.new(i / 100, 0, 0, 24)
-    }):Play()
-
-    updatePercent(i) -- Cập nhật phần trăm
-    wait(0.05)
-end
-
--- Sau khi tải xong, xóa GUI
-wait(1)
-Z:Destroy()
 
 
 -------------------// I Write... \\----------------------------------------
