@@ -52,14 +52,16 @@ J.Parent = S
 -- Thêm nhãn phần trăm với màu đen và căn giữa thanh trượt
 local labelLoading = Instance.new("TextLabel")
 labelLoading.Name = "LabelLoading"
-labelLoading.Size = UDim2.new(0, 100, 0, 24)
-labelLoading.Position = UDim2.new(0.5, -50, 0.8, 0) -- Căn giữa vào thanh đang chạy
+labelLoading.Size = UDim2.new(1, 0, 1, 0) -- Căn giữa toàn bộ thanh trượt
+labelLoading.Position = UDim2.new(0, 0, 0, 0) -- Đặt vị trí chính giữa thanh trượt
 labelLoading.BackgroundTransparency = 1
 labelLoading.TextColor3 = Color3.fromRGB(0, 0, 0) -- Chữ màu đen
 labelLoading.Font = Enum.Font.SourceSansBold
-labelLoading.TextSize = 24
+labelLoading.TextSize = 18
 labelLoading.Text = "1%" -- Ban đầu là 1%
-labelLoading.Parent = X
+labelLoading.TextStrokeTransparency = 0.8 -- Để chữ nổi bật hơn
+labelLoading.TextStrokeColor3 = Color3.fromRGB(255, 255, 255) -- Màu viền trắng cho chữ
+labelLoading.Parent = S
 
 local B = Instance.new("Frame")
 local A = Instance.new("UICorner")
@@ -126,8 +128,18 @@ for i = 1, 100 do
     -- Cập nhật phần trăm hiển thị
     labelLoading.Text = tostring(i) .. "%"
     
-    -- Cập nhật vị trí của phần trăm để căn giữa thanh trượt
-    labelLoading.Position = UDim2.new(i / 100 - 0.05
+    -- Đợi trước khi tiếp tục, thêm điều kiện dừng
+    if i == 40 then
+        wait(delayAt40)
+    elseif i == 80 then
+        wait(delayAt80)
+    else
+        wait(0.05) -- Thay đổi tốc độ cập nhật nếu cần
+    end
+end
+
+-- Xóa UI sau khi hoàn thành
+Z:Destroy()
 
 -------------------// I Write... \\----------------------------------------
  
@@ -1732,11 +1744,11 @@ SelectedFastAttackMode = {"Normal Attack","Fast Attack","Super Fast Attack"}
 
 local function ChangeModeFastAttack(SelectFastAttackMode)
 	if SelectFastAttackMode == "Normal Attack" then
-		FireCooldown = 0.5
+		FireCooldown = 1
 	elseif SelectFastAttackMode == "Fast Attack" then
-		FireCooldown = 0.2
+		FireCooldown = 0.6
 	elseif SelectFastAttackMode == "Super Fast Attack" then
-		FireCooldown = 0.04
+		FireCooldown = 0.01
 	end
 end
 
