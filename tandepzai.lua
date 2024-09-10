@@ -4940,7 +4940,24 @@ spawn(function()
     end
 end)
 
---------------------------------------------------------------------------------------------------------------------------------------------
+local SettingTweenSpeed = Tabs.Setting:AddSection("Setting Tween Speed")
+
+local SliderTween = Tabs.Setting:AddSlider("SliderTween", {
+    Title = "Teleport / Tween",
+    Description = "",
+    Default = 300,
+    Min = 100,
+    Max = 1000,
+    Rounding = 1,
+    Callback = function(Value)
+      ChangeSpeed = Value
+    end
+})
+SliderTween:OnChanged(function(Value)
+     ChangeSpeed = Value
+end)
+SliderTween:SetValue(300)
+
 --Stats
 local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Melee", Default = false })
 ToggleMelee:OnChanged(function(Value)
@@ -5051,7 +5068,7 @@ spawn(function()
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
         end
     end
-end
+end)
 
 game.StarterGui:SetCore("SendNotification", {
       Icon = "";
