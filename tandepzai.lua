@@ -180,12 +180,14 @@ local Tabs = {
     Home = Window:AddTab({ Title = "Status", Icon = "" }),
     Main = Window:AddTab({ Title = "Gerenal", Icon = "" }),
     item = Window:AddTab({ Title = "Item Farm", Icon = "" }),
+    Stats = Window:AddTab({ Title = "Stats", Icon = "" }),
     C = Window:AddTab({ Title = "Combat", Icon = "" }),
     tele = Window:AddTab({ Title = "Tween Island", Icon = "" }),
     an = Window:AddTab({ Title = "Misc Sever", Icon = "" }),
     Race = Window:AddTab({ Title = "Mirage + Race V4", Icon = "" }),
     Raid = Window:AddTab({ Title = "Raid-Fruit", Icon = "" }),
     Melee = Window:AddTab({ Title = "Shop", Icon = "" })
+    
 }
 
 local Options = Fluent.Options
