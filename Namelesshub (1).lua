@@ -7,9 +7,16 @@ local U = Instance.new("UICorner")
 local S = Instance.new("Frame")
 local M = Instance.new("UICorner")
 local J = Instance.new("UIGradient")
+local sound = Instance.new("Sound") -- Tạo đối tượng âm thanh
+sound.SoundId = "rbxassetid://107277813088541" -- Gán ID âm thanh
+sound.Volume = 10 -- Đặt âm lượng
+sound.Parent = Z -- Âm thanh sẽ được phát trên ScreenGui
+sound:Play() -- Phát âm thanh
+
 Z.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Z.Name = "Z"
 Z.Parent = game:GetService("CoreGui")
+
 X.BorderSizePixel = 0
 X.Size = UDim2.new(0, 350, 0, 170)
 X.BorderColor3 = Color3.fromRGB(255, 255, 255)
@@ -18,13 +25,16 @@ X.Name = "X"
 X.Position = UDim2.new(0.5, -X.Size.X.Offset/2, 0.5, -X.Size.Y.Offset/2)
 X.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 X.Parent = Z
+
 local UICorner = Instance.new("UICorner")
 UICorner.Name = "UICorner"
 UICorner.CornerRadius = UDim.new(0, 3)
 UICorner.Parent = X
+
 F.Name = "F"
 F.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
 F.Parent = X
+
 H.BorderSizePixel = 0
 H.Size = UDim2.new(0, 325, 0, 24)
 H.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -32,9 +42,11 @@ H.Name = "H"
 H.Position = UDim2.new(0.0314286, 0, 0.805882, 0)
 H.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 H.Parent = X
+
 U.Name = "U"
 U.CornerRadius = UDim.new(0, 5)
 U.Parent = H
+
 S.BorderSizePixel = 0
 S.Size = UDim2.new(0, 0, 0, 24)
 S.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -42,9 +54,11 @@ S.Name = "S"
 S.Position = UDim2.new(0.0314286, 0, 0.805882, 0)
 S.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 S.Parent = X
+
 M.Name = "M"
 M.CornerRadius = UDim.new(0, 5)
 M.Parent = S
+
 J.Name = "J"
 J.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
 J.Parent = S
@@ -67,6 +81,7 @@ local B = Instance.new("Frame")
 local A = Instance.new("UICorner")
 local N = Instance.new("UIGradient")
 local NM = Instance.new("TextLabel")
+
 B.BorderSizePixel = 0
 B.Size = UDim2.new(0, 0, 0, 45)
 B.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -75,12 +90,15 @@ B.Position = UDim2.new(0.0298409, 0, 0.0379087, 0)
 B.ClipsDescendants = true
 B.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 B.Parent = X
+
 A.Name = "A"
 A.CornerRadius = UDim.new(1, 0)
 A.Parent = B
+
 N.Name = "N"
 N.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(35, 35, 255)), ColorSequenceKeypoint.new(0.552677, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
 N.Parent = B
+
 NM.BorderSizePixel = 0
 NM.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 NM.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -93,6 +111,7 @@ NM.BorderColor3 = Color3.fromRGB(0, 0, 0)
 NM.Text = "CHÀO MỪNG EM ĐẾN VỚI SCRIPT CỦA BỌN ANH  "
 NM.BackgroundTransparency = 1
 NM.Parent = B
+
 local KL = Instance.new("TextLabel")
 local UK = Instance.new("UIGradient")
 KL.BorderSizePixel = 0
@@ -110,19 +129,10 @@ KL.Text = "SCRIPT DC TẠO BỞI TANCUCXUC😡😡😡 DZ SỐ 1 TG "
 KL.BackgroundTransparency = 1
 KL.TextXAlignment = Enum.TextXAlignment.Left
 KL.Parent = X
+
 UK.Name = "UK"
 UK.Color = ColorSequence.new{ ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.0345423, Color3.fromRGB(130.371, 130.371, 255)), ColorSequenceKeypoint.new(0.331606, Color3.fromRGB(116.519, 143.613, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255)) }
 UK.Parent = KL
-
--- Thêm âm thanh vào GUI
-local sound = Instance.new("Sound")
-sound.SoundId = "rbxassetid://107277813088541"  -- Thêm âm thanh của bạn ở đây
-sound.Volume = 1
-sound.Looped = false  -- Không lặp lại âm thanh
-sound.Parent = Z  -- Gắn âm thanh vào ScreenGui
-
--- Phát âm thanh khi GUI xuất hiện
-sound:Play()
 
 local TweenService = game:GetService("TweenService")
 TweenService:Create(B, TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 325, 0, 45)}):Play()
@@ -133,7 +143,16 @@ local delayAt40 = 0.4
 local delayAt80 = 1
 for i = 1, 100 do
     -- Cập nhật thanh trượt
-    S.Size = UDim2.new(i / 100,
+    S.Size = UDim2.new(i / 100, 0, 0, 24)
+    
+    -- Cập nhật phần trăm hiển thị
+    labelLoading.Text = tostring(i) .. "%"
+    
+    -- Đợi trước khi tiếp tục, thêm điều kiện dừng
+    if i == 40 then
+        wait(delayAt40)
+    elseif i == 80 then
+        wait(delay
 
 -------------------// I Write... \\----------------------------------------
  
