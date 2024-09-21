@@ -226,14 +226,6 @@ ImageButton.MouseButton1Down:Connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
 end)
 
-local function playSound()
-    local sound = Instance.new("Sound", game:GetService("CoreGui"))
-    sound.SoundId = ""
-    sound.Volume = 10
-    sound:Play()
-end
-
-playSound()
 
 repeat wait() until game.Players
 repeat wait() until game.Players.LocalPlayer
